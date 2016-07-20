@@ -8,8 +8,7 @@ class Tutorial extends React.Component {
       title: this.props.title,
       description: this.props.description,
       link: this.props.link,
-      email: this.props.user,
-      createdAt: this.props.createdAt,
+      mail: this.props.mail,
     });
   }
 
@@ -22,7 +21,11 @@ render() {
         <p>
           {this.state.title} </p>
       </a>
-      
+      <p>
+        - {this.state.mail}
+      </p>
+
+
 
       <p>
         {this.state.description}

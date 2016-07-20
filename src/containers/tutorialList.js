@@ -1,6 +1,7 @@
 import React from 'react';
 import $ from 'jquery';
 import Tutorial from '../components/tutorial'
+import TutorialForm from '../components/tutorialForm'
 
 
 class TutorialList extends React.Component {
@@ -60,12 +61,13 @@ render() {
   <div>
     <div>
       <button onClick={this.getTutorials.bind(this)}> Get Tutorials </button>
+      <TutorialForm onChange={this.getTutorials.bind(this)}/>
     </div>
       <div>
         <ul>
           {this.state.tutorials.map(function(tutorial, i) {
             return(
-              <Tutorial key={tutorial.id} title={tutorial.title} description={tutorial.description} link={tutorial.link} user={tutorial.user.email} createdAt={tutorial.created_at} onChange={this.getTutorials.bind(this)} />
+              <Tutorial key={tutorial.id} title={tutorial.title} description={tutorial.description} link={tutorial.link} createdAt={tutorial.created_at} onChange={this.getTutorials.bind(this)} />
             );
           }, this)}
         </ul>
