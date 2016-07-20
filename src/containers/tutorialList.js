@@ -1,23 +1,30 @@
 import React from 'react';
-import $ from 'jquery'
+import $ from 'jquery';
+import Tutorial from '../components/tutorial'
 
 
 class TutorialList extends React.Component {
-constructor() {
-  super();
+  constructor() {
+    super();
 
-  this.state = {
-    tutorials: []
+    this.state = {
+      tutorials: []
+    }
+
   }
 
-}
+
+
 componentDidMount() {
   console.log("Component Mount")
   $.ajaxSetup({
       headers: { 'X-User-Token': null, 'X-User-Email': null
     }
   });
+  this.getTutorials();
   }
+
+
 
   getTutorials(event) {
     let component = this
@@ -34,7 +41,7 @@ componentDidMount() {
         console.log(data)
 
         component.setState ({
-          tutorials: data.tutorials
+          tutorials: data
         });
 
         console.log(component)
@@ -47,21 +54,22 @@ componentDidMount() {
   }
 
 render() {
+  console.log(this.state)
   return (
-    <div>
-      <div>
-        <ul>
-          {this.state.todos.map(function(tutorials, i) {
-            return(
-                  <Tutorial key={tutorial.id} title={tutorial.title} description={tutorial.description} link={tutorial.link} user={tutorial.user_id.name} createdAt={todo.created_at} />
-                );
-              }, this)}
-        </ul>
-      </div>
 
+  <div>
     <div>
       <button onClick={this.getTutorials.bind(this)}> Get Tutorials </button>
     </div>
+      <div>
+        <ul>
+          {this.state.tutorials.map(function(tutorial, i) {
+            return(
+              <Tutorial key={tutorial.id} title={tutorial.title} description={tutorial.description} link={tutorial.link} user={tutorial.user.email} createdAt={tutorial.created_at} onChange={this.getTutorials.bind(this)} />
+            );
+          }, this)}
+        </ul>
+      </div>
   </div>
 )
 }
