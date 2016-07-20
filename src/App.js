@@ -1,10 +1,18 @@
 import React from 'react';
-import Login from './components/login'
+import Authentication from './containers/authentication'
+import TutorialList from './containers/tutorialList'
 
 class App extends React.Component {
     render() {
         return (
-          <Login />
+          <div>
+            <div>
+              <Authentication />
+            </div>
+            <div>
+              <TutorialList />
+            </div>
+          </div>
         );
     }
 }
