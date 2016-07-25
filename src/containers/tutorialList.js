@@ -29,7 +29,7 @@ componentDidMount() {
 
   getTutorials(event) {
     let component = this
-    event.preventDefault();
+    event && event.preventDefault();
 
 
 

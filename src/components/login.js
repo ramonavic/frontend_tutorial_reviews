@@ -6,7 +6,7 @@ class Login extends React.Component {
 
     loginUser(event) {
       event.preventDefault();
-      let component = this  
+      let component = this
       let email = this.refs.email.value;
       let password = this.refs.password.value;
 
@@ -30,7 +30,6 @@ class Login extends React.Component {
           JSON.stringify(data)
             let userEmail = localStorage.setItem('email', data.email)
             let storeToken = localStorage.setItem('token', data.authentication_token)
-            let getToken = localStorage.getItem('token')
             let email = localStorage.getItem('email')
             let userToken = localStorage.getItem('token')
 

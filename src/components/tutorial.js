@@ -2,14 +2,15 @@ import React from 'react';
 
 class Tutorial extends React.Component {
 
-  componentDidMount() {
-    this.setState({
+  constructor(props) {
+    super(props);
+    this.state = {
       id: this.props.id,
       title: this.props.title,
       description: this.props.description,
       link: this.props.link,
       mail: this.props.mail,
-    });
+    };
   }
 
 
