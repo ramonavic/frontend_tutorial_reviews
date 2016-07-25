@@ -9,28 +9,37 @@ class Tutorial extends React.Component {
       title: this.props.title,
       description: this.props.description,
       link: this.props.link,
-      mail: this.props.mail,
+      reviews: this.props.reviews
     };
   }
 
 
 render() {
-  console.log(this.state)
+  console.log(this.state.reviews)
   return(
     <li>
       <a href = {this.state.link}>
         <p>
-          {this.state.title} </p>
-      </a>
-      <p>
-        - {this.state.mail}
-      </p>
+          {this.state.title} </p> </a>
+          <p>
+          {this.state.description}
+          </p>
+          <strong> Ratings </strong>
+          {this.state.reviews.map(function(review, i) {
+            return(
+            review.rating);
+          }, this)}
+
+      
+
+          <button> Upvote </button>
+          <button> Delete </button>
 
 
 
-      <p>
-        {this.state.description}
-      </p>
+
+
+
     </li>
   )
 }
