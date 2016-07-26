@@ -1,4 +1,5 @@
 import React from 'react';
+import Review from './review';
 
 class Tutorial extends React.Component {
 
@@ -20,20 +21,23 @@ render() {
     <li>
       <a href = {this.state.link}>
         <p>
-          {this.state.title} </p> </a>
-          <p>
-          {this.state.description}
-          </p>
-          <strong> Ratings </strong>
-          {this.state.reviews.map(function(review, i) {
+          {this.state.title}
+        </p> </a>
+      <p>
+        {this.state.description}
+      </p>
+      <strong> Reviews: </strong>
+      <ul>
+        {this.state.reviews.map(function(review, i) {
             return(
-            review.rating);
-          }, this)}
+              <Review key={review.id} rating={review.rating} createdAt={review.created_at} />
+            );
+        }, this)}
+      </ul>
 
-      
 
-          <button> Upvote </button>
-          <button> Delete </button>
+      <button> Upvote </button>
+      <button> Delete </button>
 
 
 
