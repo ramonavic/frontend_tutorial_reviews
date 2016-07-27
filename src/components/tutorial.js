@@ -1,5 +1,7 @@
 import React from 'react';
 import Review from './review';
+import ReviewForm from './reviewForm';
+
 
 class Tutorial extends React.Component {
 
@@ -16,7 +18,7 @@ class Tutorial extends React.Component {
 
 
 render() {
-  console.log(this.state.reviews)
+  console.log("Tutorial ID's:  " + this.props.id)
   return(
     <li>
       <a href = {this.state.link}>
@@ -26,7 +28,8 @@ render() {
       <p>
         {this.state.description}
       </p>
-      <strong> Reviews: </strong>
+      <ReviewForm tutorialId={this.props.id} />
+      <strong> Ratings: </strong>
       <ul>
         {this.state.reviews.map(function(review, i) {
             return(
