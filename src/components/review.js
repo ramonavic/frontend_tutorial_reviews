@@ -16,11 +16,10 @@ class Review extends React.Component {
 
   render() {
     let reviewCreatedAt = this.props.createdAt
-    console.log(this.props)
     return(
               <li>
-              <StarRating name="Rating" size={12} totalStars={5} rating={this.state.rating} />
-              <em> <SmartTimeAgo value={this.state.createdAt}/> </em>
+                <StarRating name="Rating" size={12} totalStars={5} rating={this.state.rating} />
+                <em> <SmartTimeAgo value={this.state.createdAt}/> </em>
               </li>
 
     );

@@ -17,7 +17,6 @@ class TutorialList extends React.Component {
 
 
 componentDidMount() {
-  console.log("Component Mount")
   $.ajaxSetup({
       headers: { 'X-User-Token': null, 'X-User-Email': null
     }
@@ -66,8 +65,9 @@ render() {
       <div>
         <ul>
           {this.state.tutorials.map(function(tutorial, i) {
+            console.log("2nd check id's: " + tutorial.id)
             return(
-              <Tutorial key={tutorial.id} title={tutorial.title} description={tutorial.description} link={tutorial.link} reviews={tutorial.reviews} createdAt={tutorial.created_at} onChange={this.getTutorials.bind(this)} />
+              <Tutorial key={tutorial.id} id={tutorial.id} title={tutorial.title} description={tutorial.description} link={tutorial.link} reviews={tutorial.reviews} createdAt={tutorial.created_at} onChange={this.getTutorials.bind(this)} />
             );
           }, this)}
         </ul>
