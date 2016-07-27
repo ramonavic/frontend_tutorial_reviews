@@ -1,7 +1,7 @@
 import React from 'react';
 import Review from './review';
 import ReviewForm from './reviewForm';
-
+import $ from 'jquery';
 
 class Tutorial extends React.Component {
 
@@ -16,15 +16,29 @@ class Tutorial extends React.Component {
     };
   }
 
+  componentWillMount() {
+    console.log("Ready to send rating")
+    let email = localStorage.getItem('email')
+    let userToken = localStorage.getItem('token')
+
+    $.ajaxSetup({
+      headers: { 'X-User-Token': userToken, 'X-User-Email': email
+    }
+    })
+  }
+
+
+
 
 render() {
   console.log("Tutorial ID's:  " + this.props.id)
   return(
     <li>
       <a href = {this.state.link}>
-        <p>
+        <h2>
           {this.state.title}
-        </p> </a>
+        </h2>
+      </a>
       <p>
         {this.state.description}
       </p>
@@ -38,16 +52,15 @@ render() {
         }, this)}
       </ul>
 
-
-      <button> Upvote </button>
-      <button> Delete </button>
-
-
-
-
-
-
     </li>
+
+
+
+
+
+
+
+
   )
 }
 
