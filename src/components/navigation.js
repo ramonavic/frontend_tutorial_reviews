@@ -8,8 +8,8 @@ class Navigation extends React.Component {
 render() {
   return (
     <div>
-      <Link activeStyle={{color: '#53acff'}} to='/'>Home</Link> &nbsp;
-      <Link activeStyle={{color: '#53acff'}} to='/Login'>Login</Link> &nbsp;
+      <Link activeStyle={{color: '#fff'}} to='/'>Home</Link> &nbsp;
+      <Link activeStyle={{color: '#9CCC65'}} to='/Login'>Login</Link> &nbsp;
 
     </div>
   )
