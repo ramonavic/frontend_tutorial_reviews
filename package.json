@@ -55,6 +55,7 @@
     "moment": "^2.14.1",
     "react": "^0.14.3",
     "react-dom": "0.14.3",
+    "react-router": "^2.6.1",
     "react-smart-time-ago": "^1.0.5",
     "react-star-rating-component": "^1.0.0"
   }

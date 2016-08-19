@@ -13,14 +13,7 @@ class Authentication extends React.Component {
   //   });
   // }
 
-  render() {
-    return (
-      <div>
-        <Login />
-      </div>
-    );
 
-  }
 
   render() {
       return (

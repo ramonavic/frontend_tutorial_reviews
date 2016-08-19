@@ -16,7 +16,7 @@ class TutorialList extends React.Component {
 
 
 
-componentDidMount() {
+componentWillMount() {
   $.ajaxSetup({
       headers: { 'X-User-Token': null, 'X-User-Email': null
     }

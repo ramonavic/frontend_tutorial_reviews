@@ -24,11 +24,13 @@ class ReviewForm extends React.Component {
   sendReview(nextValue, prevValue, name){
     console.log("This is the passed tutorial id", this.props.tutorialId)
     let component = this;
+
     let tutorialIdUrl = this.props.tutorialId
     let tutorialUrl = "https://tutorial-api.herokuapp.com/tutorials/"
     let reviewsUrl = "/reviews.json"
 
     let url = tutorialUrl + tutorialIdUrl + reviewsUrl
+
 
     let email = localStorage.getItem('email')
     let userToken = localStorage.getItem('token')
@@ -37,14 +39,11 @@ class ReviewForm extends React.Component {
       headers: { 'X-User-Token': userToken, 'X-User-Email': email
     }
     })
-    console.log(url)
 
     let newReview = {
       id: null,
       rating: nextValue,
-      tutorial_id: tutorialIdUrl,
-      created_at: new Date().toJSON(),
-
+      tutorial_id: tutorialIdUrl
     }
 
     $.ajax({
@@ -67,9 +66,6 @@ class ReviewForm extends React.Component {
     }
 
 
-
-
-
 render() {
 
   return(
@@ -77,8 +73,8 @@ render() {
       <h2> Rate this tutorial </h2>
       <StarRatingComponent
           name="Review1"
-          ref={this.props.tutorialId}
           value={3}
+          ref={this.props.tutorialId}
           onStarClick={this.sendReview.bind(this)}
           starCount={5} />
     </div>
