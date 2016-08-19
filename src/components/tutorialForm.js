@@ -26,11 +26,10 @@ postTutorials(event) {
 
   };
 
-
   $.ajaxSetup({
-    headers: { 'X-User-Token': userToken, 'X-User-Email': email
-  }
+    headers: { 'X-User-Token': userToken, 'X-User-Email': email }
   })
+
 
   $.ajax({
     url: "https://tutorial-api.herokuapp.com/tutorials.json",

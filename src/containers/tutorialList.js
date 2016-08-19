@@ -5,20 +5,23 @@ import TutorialForm from '../components/tutorialForm'
 
 
 class TutorialList extends React.Component {
-  constructor() {
+  constructor(props) {
     super();
 
     this.state = {
-      tutorials: []
+      tutorials: [],
+      email: props.email,
+      userToken: props.userToken
     }
 
   }
 
 
 
-componentDidMount() {
+componentWillMount() {
+  let component = this
   $.ajaxSetup({
-      headers: { 'X-User-Token': null, 'X-User-Email': null
+      headers: { 'X-User-Token': component.state.userToken, 'X-User-Email': component.state.email
     }
   });
   this.getTutorials();

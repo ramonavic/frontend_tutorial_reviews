@@ -1,6 +1,6 @@
 import React from 'react';
 import SmartTimeAgo from 'react-smart-time-ago';
-import StarRating from 'react-star-rating';
+import StarRatingComponent from 'react-star-rating-component';
 
 
 
@@ -18,7 +18,7 @@ class Review extends React.Component {
     let reviewCreatedAt = this.props.createdAt
     return(
               <li>
-                <StarRating name="Rating" size={12} totalStars={5} rating={this.state.rating} />
+                <StarRatingComponent name="Rating" editing={false} starCount={5} value={this.state.rating} />
                 <em> <SmartTimeAgo value={this.state.createdAt}/> </em>
               </li>
 

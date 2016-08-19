@@ -1,8 +1,21 @@
 import React from 'react';
 import Logout from './logout'
 import $ from 'jquery'
+import styles from '../assets/style/authentication.css.js'
+import Home from '../containers/home'
 
 class Login extends React.Component {
+  constructor() {
+    super()
+
+    this.state = {
+      userToken: null,
+      email: null
+    }
+    console.log(this.state.email)
+
+  }
+
 
     loginUser(event) {
       event.preventDefault();
@@ -41,6 +54,13 @@ class Login extends React.Component {
           component.refs.email.value = "";
           component.refs.password.value = "";
 
+          component.setState({
+            userToken: userToken,
+            email: email
+          })
+          console.log(component.state.email)
+
+
         },
 
         fail: function(error){
@@ -60,17 +80,31 @@ class Login extends React.Component {
 
 
     render() {
+
+      if (this.state.email == null ) {
+
         return (
-            <div>
-              <form onSubmit={this.loginUser.bind(this)} >
-                  <input type="text" ref="email" hintText ="Email" />
-                  <input type="text" ref="password" hintText ="Password"/>
-                  <button>Login</button>
-              </form>
-            </div>
+          <div style={styles.wrapper}>
+          <div className='container'>
+          <form style={styles.formSignin} onSubmit={this.loginUser.bind(this)} >
+          <h2 style={styles.loginHeader}> Please Sign in </h2>
+          <input style={styles.inputEmail} type="text" ref="email" placeholder='Email' />
+          <input style={styles.inputPassword} type="text" ref="password" placeholder ="Password"/>
+          <button className='btn btn-lg btn-primary btn-block'>Login</button>
+          </form>
+          </div>
+          </div>
 
         );
+
+
+      } else {
+        return (
+          <Home userToken={this.state.userToken} email={this.state.email}/>
+        )
+      }
     }
+
 }
 
 export default Login;
