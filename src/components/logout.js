@@ -1,5 +1,6 @@
 import React from 'react';
 import $ from 'jquery'
+import styles from '../assets/style/navigation.css.js'
 
 class Logout extends React.Component {
 
@@ -18,7 +19,7 @@ class Logout extends React.Component {
           let deleteToken = localStorage.setItem('token', null)
           let noEmail = localStorage.getItem('email')
           let noUserToken = localStorage.getItem('token')
-          
+
           console.log(noEmail)
           console.log(noUserToken)
 
@@ -38,9 +39,7 @@ class Logout extends React.Component {
 
 render() {
   return(
-    <div>
-      <button onClick={this.logoutUser.bind(this)}> Logout </button>
-    </div>
+      <a href='/'  style={styles.navListItem} onClick={this.logoutUser.bind(this)} >Logout</a>
 
   )
 }

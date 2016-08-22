@@ -85,14 +85,16 @@ class Login extends React.Component {
 
         return (
           <div style={styles.wrapper}>
-          <div className='container'>
-          <form style={styles.formSignin} onSubmit={this.loginUser.bind(this)} >
-          <h2 style={styles.loginHeader}> Please Sign in </h2>
-          <input style={styles.inputEmail} type="text" ref="email" placeholder='Email' />
-          <input style={styles.inputPassword} type="text" ref="password" placeholder ="Password"/>
-          <button className='btn btn-lg btn-primary btn-block'>Login</button>
-          </form>
-          </div>
+            <div className='container'>
+              <form style={styles.formSignin} onSubmit={this.loginUser.bind(this)} >
+                <h2 style={styles.loginHeader}> Please Sign in </h2>
+                <input style={styles.inputEmail} type="text" ref="email" placeholder='Email' />
+                <input style={styles.inputPassword} type="text" ref="password" placeholder ="Password"/>
+                <button className='btn btn-lg btn-primary btn-block'>Login</button> <br/>
+                <strong> Take a look: </strong><br/>
+                <small><em> Email: "frank@ex.com" <br/> password: "1234abcd" <br/> </em></small>
+              </form>
+            </div>
           </div>
 
         );

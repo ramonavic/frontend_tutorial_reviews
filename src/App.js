@@ -4,7 +4,7 @@ import ReactIntl from 'react-intl';
 import Authentication from './containers/authentication'
 import Login from './components/login'
 import Home from './containers/home'
-
+import TutorialForm from './components/tutorialForm'
 
 class App extends React.Component {
 
@@ -15,8 +15,10 @@ class App extends React.Component {
         return (
           <div>
             <Router history={hashHistory}>
-              <Route path ='/' component={Home} />
+              <Route path ='/' component={Login} />
+              <Route path = '/home' component={Home} />
               <Route path ='/login' component={Login} />
+              <Route path ='/add' component={TutorialForm} />
               <Route path='*' component={Home} />
             </Router>
           </div>
