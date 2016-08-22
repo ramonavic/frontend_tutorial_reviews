@@ -18,12 +18,12 @@ class TutorialList extends React.Component {
 
 
 
-componentWillMount() {
-  let component = this
-  $.ajaxSetup({
-      headers: { 'X-User-Token': component.state.userToken, 'X-User-Email': component.state.email
-    }
-  });
+  componentWillMount() {
+    let component = this
+    $.ajaxSetup({
+        headers: { 'X-User-Token': component.state.userToken, 'X-User-Email': component.state.email
+      }
+    });
   }
 
   componentDidMount() {
@@ -33,8 +33,6 @@ componentWillMount() {
   getTutorials(event) {
     let component = this
     event && event.preventDefault();
-
-
 
     $.ajax({
       url: "https://tutorial-api.herokuapp.com/tutorials.json",
@@ -54,32 +52,30 @@ componentWillMount() {
     });
   }
 
-render() {
-  return (
-
-  <div>
-    <div>
-        <ul>
-          {this.state.tutorials.map(function(tutorial, i) {
-            return(
-              <Tutorial
-                key={tutorial.id}
-                id={tutorial.id}
-                title={tutorial.title}
-                description={tutorial.description}
-                link={tutorial.link}
-                reviews={tutorial.reviews}
-                createdAt={tutorial.created_at}
-                onChange={this.getTutorials.bind(this)}
-              />
-            );
-          }, this)}
-        </ul>
+  render() {
+    return (
+      <div>
+        <div>
+            <ul>
+              {this.state.tutorials.map(function(tutorial, i) {
+                return(
+                  <Tutorial
+                    key={tutorial.id}
+                    id={tutorial.id}
+                    title={tutorial.title}
+                    description={tutorial.description}
+                    link={tutorial.link}
+                    reviews={tutorial.reviews}
+                    createdAt={tutorial.created_at}
+                    onChange={this.getTutorials.bind(this)}
+                  />
+                );
+              }, this)}
+            </ul>
+          </div>
       </div>
-  </div>
-)
-}
-
+    )
+  }
 }
 
 export default TutorialList
