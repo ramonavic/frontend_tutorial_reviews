@@ -1,7 +1,6 @@
 import React from 'react';
 import { Router, Route, Link, IndexRoute, hashHistory, browserHistory } from 'react-router'
 import ReactIntl from 'react-intl';
-import Authentication from './containers/authentication'
 import Login from './components/login'
 import Home from './containers/home'
 import TutorialForm from './components/tutorialForm'
