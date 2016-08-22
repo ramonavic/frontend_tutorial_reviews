@@ -7,7 +7,6 @@ class Logout extends React.Component {
   logoutUser(event) {
       event.preventDefault();
 
-
       $.ajax({
         url: "https://tutorial-api.herokuapp.com/users/sign_out.json",
         type: "DELETE",
@@ -24,9 +23,11 @@ class Logout extends React.Component {
           console.log(noUserToken)
 
           $.ajaxSetup({
-            headers: { 'X-User-Token': noUserToken, 'X-User-Email': noEmail
-                }
-              });
+            headers: {
+              'X-User-Token': noUserToken,
+              'X-User-Email': noEmail
+            }
+          });
         },
 
         fail: function(error){
@@ -39,7 +40,7 @@ class Logout extends React.Component {
 
 render() {
   return(
-      <a href='/'  style={styles.navListItem} onClick={this.logoutUser.bind(this)} >Logout</a>
+      <a href='/' style={styles.navListItem} onClick={this.logoutUser.bind(this)} >Logout</a>
 
   )
 }

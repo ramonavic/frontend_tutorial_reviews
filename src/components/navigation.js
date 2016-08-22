@@ -16,7 +16,6 @@ render() {
           <Logout />
         </ul>
       </div>
-
   )
 }
 

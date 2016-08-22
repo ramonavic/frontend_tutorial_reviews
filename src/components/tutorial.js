@@ -27,44 +27,30 @@ class Tutorial extends React.Component {
     })
   }
 
-
-
-
-render() {
-  console.log("Tutorial ID's:  " + this.props.id)
-  return(
-    <li>
-      <a href = {this.state.link}>
-        <h2>
-          {this.state.title}
-        </h2>
-      </a>
-      <p>
-        {this.state.description}
-      </p>
-      <ReviewForm tutorialId={this.props.id} />
-      <strong> Ratings: </strong>
-      <ul>
-        {this.state.reviews.map(function(review, i) {
-            return(
-              <Review key={review.id} rating={review.rating} createdAt={review.created_at} />
-            );
-        }, this)}
-      </ul>
-
-    </li>
-
-
-
-
-
-
-
-
-  )
-}
-
-
+  render() {
+    console.log("Tutorial ID's:  " + this.props.id)
+    return(
+      <li>
+        <a href = {this.state.link}>
+          <h2>
+            {this.state.title}
+          </h2>
+        </a>
+        <p>
+          {this.state.description}
+        </p>
+        <ReviewForm tutorialId={this.props.id} />
+        <strong> Ratings: </strong>
+        <ul>
+          {this.state.reviews.map(function(review, i) {
+              return(
+                <Review key={review.id} rating={review.rating} createdAt={review.created_at} />
+              );
+          }, this)}
+        </ul>
+      </li>
+    )
+  }
 }
 
 export default Tutorial

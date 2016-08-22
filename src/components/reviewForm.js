@@ -28,9 +28,7 @@ class ReviewForm extends React.Component {
     let tutorialIdUrl = this.props.tutorialId
     let tutorialUrl = "https://tutorial-api.herokuapp.com/tutorials/"
     let reviewsUrl = "/reviews.json"
-
     let url = tutorialUrl + tutorialIdUrl + reviewsUrl
-
 
     let email = localStorage.getItem('email')
     let userToken = localStorage.getItem('token')

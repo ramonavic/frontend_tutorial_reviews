@@ -12,8 +12,6 @@ class Login extends React.Component {
       userToken: null,
       email: null
     }
-    console.log(this.state.email)
-
   }
 
 
@@ -59,24 +57,13 @@ class Login extends React.Component {
             email: email
           })
           console.log(component.state.email)
-
-
         },
 
         fail: function(error){
           console.log(error)
           }
         })
-
-
-
-
       }
-
-
-
-
-
 
 
     render() {
@@ -96,10 +83,8 @@ class Login extends React.Component {
               </form>
             </div>
           </div>
-
         );
-
-
+        
       } else {
         return (
           <Home userToken={this.state.userToken} email={this.state.email}/>
