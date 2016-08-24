@@ -16,8 +16,10 @@ class ReviewForm extends React.Component {
     let userToken = localStorage.getItem('token')
 
     $.ajaxSetup({
-      headers: { 'X-User-Token': userToken, 'X-User-Email': email
-    }
+      headers: {
+        'X-User-Token': userToken,
+        'X-User-Email': email
+      }
     })
   }
 
@@ -34,8 +36,10 @@ class ReviewForm extends React.Component {
     let userToken = localStorage.getItem('token')
 
     $.ajaxSetup({
-      headers: { 'X-User-Token': userToken, 'X-User-Email': email
-    }
+      headers: {
+        'X-User-Token': userToken,
+        'X-User-Email': email
+      }
     })
 
     let newReview = {
@@ -76,7 +80,6 @@ render() {
           onStarClick={this.sendReview.bind(this)}
           starCount={5} />
     </div>
-
   )
 }
 
