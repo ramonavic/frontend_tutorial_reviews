@@ -11,7 +11,6 @@ class ReviewForm extends React.Component {
   }
 
   componentWillMount() {
-    console.log("Ready to send rating")
     let email = localStorage.getItem('email')
     let userToken = localStorage.getItem('token')
 
@@ -31,16 +30,6 @@ class ReviewForm extends React.Component {
     let tutorialUrl = "https://tutorial-api.herokuapp.com/tutorials/"
     let reviewsUrl = "/reviews.json"
     let url = tutorialUrl + tutorialIdUrl + reviewsUrl
-
-    let email = localStorage.getItem('email')
-    let userToken = localStorage.getItem('token')
-
-    $.ajaxSetup({
-      headers: {
-        'X-User-Token': userToken,
-        'X-User-Email': email
-      }
-    })
 
     let newReview = {
       id: null,
