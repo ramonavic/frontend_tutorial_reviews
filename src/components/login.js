@@ -80,7 +80,7 @@ class Login extends React.Component {
                 <input style={styles.inputPassword} type="password" ref="password" placeholder ="Password"/>
                 <button className='btn btn-lg btn-primary btn-block'>Login</button> <br/>
                 <strong> Take a look: </strong><br/>
-                <small><em> Email: "frank@ex.com" <br/> password: "1234abcd" <br/> </em></small>
+                <small><em> Email: "frank@ex.com" <br/> password: "abcd1234" <br/> </em></small>
               </form>
             </div>
           </div>

@@ -1,5 +1,6 @@
 import React from 'react';
 import StarRatingComponent from 'react-star-rating-component';
+import _ from 'lodash';
 import $ from 'jquery';
 
 class ReviewForm extends React.Component {
@@ -22,17 +23,19 @@ class ReviewForm extends React.Component {
     })
   }
 
-  sendReview(nextValue, prevValue, name){
+  sendReview(nextValue, prevValue, name, reviewId){
     console.log("This is the passed tutorial id", this.props.tutorialId)
+    console.log("This is the given rating: ", nextValue)
+
+
     let component = this;
 
     let tutorialIdUrl = this.props.tutorialId
-    let tutorialUrl = "https://tutorial-api.herokuapp.com/tutorials/"
-    let reviewsUrl = "/reviews.json"
-    let url = tutorialUrl + tutorialIdUrl + reviewsUrl
+    const tutorialUrl = "https://tutorial-api.herokuapp.com/reviews.json/"
+    const reviewsUrl = "/reviews.json"
+    const url = tutorialUrl
 
     let newReview = {
-      id: null,
       rating: nextValue,
       tutorial_id: tutorialIdUrl
     }
@@ -48,6 +51,7 @@ class ReviewForm extends React.Component {
       success: function(data) {
         JSON.stringify(data)
         console.log(data)
+
 
       },
       fail: function(error){
