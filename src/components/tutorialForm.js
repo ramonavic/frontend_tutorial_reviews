@@ -1,6 +1,6 @@
 import React from 'react'
 import $ from 'jquery'
-
+import styles from '../assets/style/tutorialForm.css.js'
 
 
 class TutorialForm extends React.Component {
@@ -61,12 +61,16 @@ postTutorials(event) {
 
 render() {
   return(
-    <form>
-      <input type="text" ref="tutorialTitle" placeholder="Title"/>
-      <input type="text" ref="tutorialDescription" placeholder="Description"/>
-      <input type="text" ref="tutorialLink" placeholder="Link"/>
-      <button onClick={this.postTutorials.bind(this)}> Add Tutorial </button>
-    </form>
+    <div style={styles.wrapper}>
+      <form style={styles.addTutorialForm}>
+      <h2 style={styles.header}> Add Tutorial </h2>
+        <input type="text" ref="tutorialTitle" placeholder="Title" style={styles.title}/>
+        <input type="text" ref="tutorialLink" placeholder="Link" style={styles.link}/>
+        <input type="text" ref="tutorialDescription" placeholder="Description" style={styles.description}/>
+        <button onClick={this.postTutorials.bind(this)} className='btn btn-lg btn-primary btn-block' style={styles.tealButton} > Add Tutorial </button>
+
+      </form>
+    </div>
   )
 }
 

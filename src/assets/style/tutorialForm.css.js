@@ -1,12 +1,7 @@
 export default {
 
-  background: {
-    backgroundImage: 'url(https://cdn.elegantthemes.com/blog/wp-content/uploads/2013/09/bg-6-full.jpg)',
-    width: '100%',
-    height: '100%'
-  },
 
-  formSignin: {
+  addTutorialForm: {
     maxWidth: '380px',
     margin: '0 auto',
     backgroundColor: '#fff',
@@ -19,28 +14,40 @@ export default {
     textAlign: 'center'
   },
 
-  loginHeader: {
-    marginBottom: '30px'
+  header: {
+    marginTop: '30px',
   },
 
-  inputEmail: {
+  title: {
 	  position: 'relative',
 	  fontSize: '16px',
 	  height: 'auto',
 	  padding: '10px',
     marginBottom: '-1px',
+    marginTop:  '10px',
     borderBottomLeftRadius: '0',
     borderBottomRightRadius: '0'
   },
 
-  inputPassword: {
+  link: {
     position: 'relative',
     fontSize: '16px',
     height: 'auto',
     padding: '10px',
+    marginBottom: '-1px',
+    borderBottomLeftRadius: '0',
+    borderBottomRightRadius: '0'
+  },
+
+  description: {
+    position: 'relative',
+    fontSize: '16px',
+    height: 'auto',
+    padding: '50px',
     marginBottom: '20px',
     borderBottomLeftRadius: '0',
     borderBottomRightRadius: '0'
+
   },
 
   tealButton: {

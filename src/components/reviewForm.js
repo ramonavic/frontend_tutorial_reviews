@@ -65,7 +65,7 @@ render() {
 
   return(
     <div>
-      <h2> Rate this tutorial </h2>
+      <h3> Rate this tutorial </h3>
       <StarRatingComponent
           name="Review1"
           value={3}

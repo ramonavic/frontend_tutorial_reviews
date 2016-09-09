@@ -2,6 +2,7 @@ import React from 'react';
 import $ from 'jquery';
 import Tutorial from '../components/tutorial'
 import TutorialForm from '../components/tutorialForm'
+import styles from '../assets/style/tutorials.css.js'
 
 
 class TutorialList extends React.Component {
@@ -16,8 +17,6 @@ class TutorialList extends React.Component {
 
   }
 
-
-
   componentWillMount() {
     let component = this
     $.ajaxSetup({
@@ -29,6 +28,11 @@ class TutorialList extends React.Component {
   componentDidMount() {
     this.getTutorials();
   }
+
+
+    componentWillUpdate() {
+      this.getTutorials();
+    }
 
   getTutorials(event) {
     let component = this
@@ -54,26 +58,29 @@ class TutorialList extends React.Component {
 
   render() {
     return (
-      <div>
-        <div>
-            <ul>
-              {this.state.tutorials.map(function(tutorial, i) {
-                return(
-                  <Tutorial
-                    key={tutorial.id}
-                    id={tutorial.id}
-                    title={tutorial.title}
-                    description={tutorial.description}
-                    link={tutorial.link}
-                    reviews={tutorial.reviews}
-                    createdAt={tutorial.created_at}
-                    onChange={this.getTutorials.bind(this)}
-                  />
-                );
-              }, this)}
-            </ul>
-          </div>
-      </div>
+
+        <div style={styles.tutorialWrapper}>
+          <div style={styles.center}>
+          <h1> Our Tutorials </h1>
+          <hr/>
+              <ul style={styles.listStyle}>
+                {this.state.tutorials.map(function(tutorial, i) {
+                  return(
+                    <Tutorial
+                      key={tutorial.id}
+                      id={tutorial.id}
+                      title={tutorial.title}
+                      description={tutorial.description}
+                      link={tutorial.link}
+                      reviews={tutorial.reviews}
+                      createdAt={tutorial.created_at}
+                      onChange={this.getTutorials.bind(this)}
+                    />
+                  );
+                }, this)}
+              </ul>
+            </div>
+        </div>
     )
   }
 }
