@@ -2,6 +2,7 @@ import React from 'react';
 import Review from './review';
 import ReviewForm from './reviewForm';
 import $ from 'jquery';
+import styles from '../assets/style/tutorials.css.js'
 
 class Tutorial extends React.Component {
 
@@ -32,22 +33,25 @@ class Tutorial extends React.Component {
     return(
       <li>
         <a href = {this.state.link}>
-          <h2>
+          <h2 style={styles.tutorialHeader}>
             {this.state.title}
           </h2>
         </a>
-        <p>
+        <p style={styles.description}>
           {this.state.description}
         </p>
         <ReviewForm tutorialId={this.props.id} />
+        <div style={styles.ratingList}>
         <strong> Ratings: </strong>
-        <ul>
+        <ul style={styles.listStyle}>
           {this.state.reviews.map(function(review, i) {
               return(
                 <Review key={review.id} rating={review.rating} createdAt={review.created_at} />
               );
           }, this)}
         </ul>
+        </div>
+        <hr/>
       </li>
     )
   }
